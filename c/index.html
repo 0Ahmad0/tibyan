@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>انضم إلى حلقة ذكر في تِبيان</title>
+<style>
+  :root { color-scheme: light dark; --g:#0a6b5a; }
+  body { margin:0; font-family: system-ui, "Segoe UI", Tahoma, sans-serif; display:grid; place-items:center; min-height:100vh; padding:24px; box-sizing:border-box; text-align:center; }
+  main { max-width:420px; width:100%; }
+  h1 { font-size:1.4rem; margin:0 0 .5rem; }
+  p { line-height:1.8; opacity:.85; }
+  .code { font-size:2.2rem; letter-spacing:.4em; font-weight:700; color:var(--g); direction:ltr; margin:1rem 0; }
+  a.btn { display:block; padding:16px; border-radius:14px; text-decoration:none; font-size:1.1rem; margin:12px 0; }
+  a.open { background:var(--g); color:#fff; }
+  a.store { border:2px solid var(--g); color:var(--g); }
+</style>
+</head>
+<body>
+<main>
+  <h1>حلقة ذكر في تِبيان</h1>
+  <p>رمز الحلقة:</p>
+  <div class="code" id="code">······</div>
+  <a class="btn open" id="open" href="#">افتح في التطبيق</a>
+  <a class="btn store" href="https://play.google.com/store/apps/details?id=com.app.tibyan">ثبّت التطبيق من Google Play</a>
+  <p>إن كان التطبيق مثبّتًا فاضغط «افتح في التطبيق»، وإلا ثبّته ثم عُد إلى هذا الرابط.</p>
+</main>
+<script>
+  // الرمز من الرابط: 6 خانات حروفٌ كبيرة وأرقام فقط — غير ذلك لا يُعرض ولا يُمرَّر.
+  const raw = new URLSearchParams(location.search).get("code") || "";
+  const code = /^[A-Za-z0-9]{6}$/.test(raw) ? raw.toUpperCase() : "";
+  if (code) {
+    document.getElementById("code").textContent = code;
+    const app = "tibyan://c?code=" + code;
+    document.getElementById("open").href = app;
+    // محاولةٌ تلقائية بعد لحظة: ينجح حيث لا يتحقّق رابط التطبيق من النطاق.
+    setTimeout(() => { location.href = app; }, 400);
+  } else {
+    document.getElementById("open").style.display = "none";
+  }
+</script>
+</body>
+</html>
