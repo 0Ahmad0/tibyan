@@ -1,85 +1,923 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>تِبيان — غريب القرآن والمصحف | Tibyan</title>
-<meta name="description" content="تِبيان: معاني الألفاظ الغريبة في القرآن الكريم، مع المصحف والتلاوة والتفسير ومواقيت الصلاة والأذكار. بلا إعلانات ولا حساب.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -20 220 252'%3E%3Crect x='-40' y='-20' width='220' height='252' rx='48' fill='%230A5347'/%3E%3Cpath d='M70 68V130M70 130L22 178M70 130V190M70 130L118 178' stroke='%23F4F0E6' stroke-width='18' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='18' cy='182' r='18' fill='%23F4F0E6'/%3E%3Ccircle cx='70' cy='194' r='18' fill='%23F4F0E6'/%3E%3Ccircle cx='122' cy='182' r='18' fill='%23F4F0E6'/%3E%3Ccircle cx='70' cy='34' r='34' fill='%23C2984E'/%3E%3C/svg%3E">
-<style>
-  :root {
-    --ground: #FBF9F5; --surface: #F3F0E9; --ink: #1B1D1C; --muted: #5E6361;
-    --line: #E3DED2; --primary: #0E6B5C; --brand: #0A5347; --gold: #C2984E; --cream: #F4F0E6;
-    color-scheme: light dark;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --ground: #14161A; --surface: #1D2026; --ink: #F2F1EE; --muted: #A3A8AD;
-            --line: #2C3037; --primary: #6CC0B1; }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--ground); color: var(--ink);
-    font: 17px/1.8 "Noto Sans Arabic", "Segoe UI", Tahoma, "Geeza Pro", system-ui, sans-serif;
-  }
-  .hero { background: var(--brand); color: var(--cream); padding: 56px 16px 48px; }
-  .wrap { max-width: 720px; margin: 0 auto; }
-  main.wrap { padding: 8px 16px 64px; }
-  .hero .wrap { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
-  .hero svg { width: 46px; height: auto; flex: none; }
-  h1, h2 { font-family: "Amiri", "Noto Naskh Arabic", "Times New Roman", serif; line-height: 1.3; text-wrap: balance; }
-  h1 { font-size: 2.6rem; margin: 0; }
-  .hero p { margin: 4px 0 0; max-width: 46ch; opacity: .92; }
-  h2 { font-size: 1.5rem; margin: 2em 0 .4em; color: var(--primary); }
-  ul { padding-inline-start: 1.2em; }
-  li { margin-block: .35em; max-width: 66ch; }
-  a { color: var(--primary); }
-  .contact { display: grid; gap: 10px; margin-top: 12px; }
-  .contact a { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-decoration: none; color: var(--ink); }
-  .contact a span:last-child { color: var(--primary); direction: ltr; unicode-bidi: isolate; }
-  .contact a:hover, .contact a:focus-visible { border-color: var(--primary); }
-  .note { color: var(--muted); font-size: .95rem; }
-  .en { direction: ltr; text-align: left; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); font-family: system-ui, "Segoe UI", Roboto, sans-serif; font-size: 16px; }
-  footer { color: var(--muted); font-size: .9rem; margin-top: 40px; }
-</style>
-</head>
-<body>
-<header class="hero">
-  <div class="wrap">
-    <svg viewBox="0 0 140 212" aria-hidden="true"><path d="M70 68V130M70 130L22 178M70 130V190M70 130L118 178" stroke="#F4F0E6" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="18" cy="182" r="18" fill="#F4F0E6"/><circle cx="70" cy="194" r="18" fill="#F4F0E6"/><circle cx="122" cy="182" r="18" fill="#F4F0E6"/><circle cx="70" cy="34" r="34" fill="#C2984E"/></svg>
-    <div>
-      <h1>تِبيان</h1>
-      <p>معاني الألفاظ الغريبة في القرآن الكريم منسوبةً إلى مصادرها، مع المصحف والتلاوة والتفسير ومواقيت الصلاة والأذكار. بلا إعلانات، ولا حساب، ولا تتبّع.</p>
-    </div>
-  </div>
-</header>
-
-<main class="wrap">
-  <h2>ما في التطبيق</h2>
-  <ul>
-    <li><strong>غريب القرآن:</strong> شرح الألفاظ ومواضع ورودها وأقوال المفسرين، مع اختبارات للمراجعة واختبار للحلقات.</li>
-    <li><strong>المصحف:</strong> صفحات أو نص، وتلاوة بثمانية قرّاء في الخلفية، وسبعة تفاسير، وألوان التجويد.</li>
-    <li><strong>الصلاة:</strong> مواقيت تُحسب دون إنترنت، وتنبيهات، وويدجت، وبوصلة القبلة.</li>
-    <li><strong>الأذكار:</strong> أذكار الصباح والمساء، والسبحة، والأدعية، والأسماء الحسنى، والتقويم الهجري.</li>
-  </ul>
-
-  <h2 id="contact">الدعم والتواصل</h2>
-  <p>لسؤال أو اقتراح أو للإبلاغ عن خطأ في المحتوى أو التطبيق:</p>
-  <div class="contact">
-    <a href="mailto:mr.ahmed.alhariri@gmail.com?subject=%D8%AA%D8%A8%D9%8A%D8%A7%D9%86"><span>البريد الإلكتروني</span><span>mr.ahmed.alhariri@gmail.com</span></a>
-    <a href="https://t.me/Ahmad_Alhariri"><span>تيليجرام</span><span>t.me/Ahmad_Alhariri</span></a>
-  </div>
-  <p class="note">عند الإبلاغ عن مشكلة، اذكر رقم إصدار التطبيق (من شاشة «عن التطبيق») ونوع جهازك وإصدار أندرويد.</p>
-
-  <h2>الخصوصية</h2>
-  <p>كل ما تحفظه يبقى على جهازك. التفاصيل الكاملة في <a href="privacy.html">سياسة الخصوصية</a>، وطريقة حذف بياناتك في <a href="privacy.html#delete">قسم الحذف</a>.</p>
-
-  <section class="en" lang="en">
-    <h2>Tibyan</h2>
-    <p>Meanings of rare Quran words with their sources, plus the Mushaf, recitation, tafsir, prayer times and adhkar. No ads, no account, no tracking. The app's interface is in Arabic.</p>
-    <p>Support: <a href="mailto:mr.ahmed.alhariri@gmail.com">mr.ahmed.alhariri@gmail.com</a> · <a href="privacy.html#en">Privacy policy</a></p>
-  </section>
-
-  <footer>© 2026 أحمد الحريري · Ahmad Alhariri</footer>
-</main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#075344" />
+    <title>رفيقٌ للقرآن، وطمأنينةٌ ليومك — تِبيان</title>
+    <meta
+      name="description"
+      content="تعرّف إلى تبيان: المصحف وتلاوات أكثر من 100 قارئ، غريب القرآن، الأذكار والسبحة، مواقيت الصلاة وأصوات الأذان، المكتبة والحديث والسيرة."
+    />
+    <link rel="icon" href="assets/brand.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./" aria-label="تبيان — الصفحة الرئيسية"
+          ><span class="brand-mark"
+            ><svg viewBox="0 0 140 212" aria-hidden="true">
+              <path
+                d="M70 68V130M70 130L22 178M70 130V190M70 130L118 178"
+                stroke="currentColor"
+                stroke-width="18"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <circle cx="18" cy="182" r="18" fill="currentColor" />
+              <circle cx="70" cy="194" r="18" fill="currentColor" />
+              <circle cx="122" cy="182" r="18" fill="currentColor" />
+              <circle cx="70" cy="34" r="34" fill="#C69B50" /></svg></span
+          ><span>تِبيان<small>TIBYAN</small></span></a
+        >
+        <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+          <a href="./" aria-current="page">الرئيسية</a
+          ><a href="./#discover">اكتشف تبيان</a
+          ><a href="guide.html">دليل الاستخدام</a
+          ><a href="./#contact">تواصل معنا</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-button theme-toggle"
+            type="button"
+            aria-label="تفعيل المظهر الداكن"
+            aria-pressed="false"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z" />
+            </svg></button
+          ><a
+            href="https://play.google.com/store/apps/details?id=com.app.tibyan"
+            class="button button-small"
+            >حمّل تبيان
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" /></svg></a
+          ><button
+            class="icon-button menu-toggle"
+            type="button"
+            aria-label="فتح القائمة"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        aria-label="التنقل على الهاتف"
+        hidden
+      >
+        <a href="./">الرئيسية</a><a href="./#discover">اكتشف تبيان</a
+        ><a href="guide.html">دليل الاستخدام</a
+        ><a href="privacy.html">سياسة الخصوصية</a
+        ><a href="./#contact">تواصل معنا</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero container">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow"
+            ><span class="live-dot"></span> القرآن، وما يطمئنّ به يومك</span
+          >
+          <h1>
+            تفهم أكثر.<br /><span class="hero-line"
+              >وتتقرّب <em>أكثر.</em
+              ><svg class="rosette" viewBox="0 0 100 100" aria-hidden="true">
+                <path
+                  d="m50 0 10 21 25-6-6 25 21 10-21 10 6 25-25-6-10 21-10-21-25 6 6-25L0 50l21-10-6-25 25 6Z"
+                  fill="currentColor"
+                /></svg
+            ></span>
+          </h1>
+          <p class="hero-description">
+            من آيةٍ تتدبّرها، إلى ذِكرٍ يرافقك.<br />تبيان يجمع لك القرآن والمعرفة
+            والعبادة،<br class="desktop-only" />
+            في تجربة عربية تعتني بالتفاصيل.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://play.google.com/store/apps/details?id=com.app.tibyan"
+              >حمّل تبيان مجانًا
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" /></svg
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5m6-6-6 6 6 6" /></svg></a
+            ><a class="button button-tonal" href="#discover"
+              >اكتشف التجربة<svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5m6-6-6 6 6 6" /></svg
+            ></a>
+          </div>
+          <div class="hero-trust">
+            <span
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m5 12 4 4L19 6" />
+              </svg>
+              بلا إعلانات</span
+            ><span
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m5 12 4 4L19 6" />
+              </svg>
+              محتواك المحفوظ على جهازك</span
+            >
+          </div>
+        </div>
+        <div class="phone-scene" data-reveal>
+          <div class="scene-ring"></div>
+          <div class="scene-orbit orbit-one">
+            <svg class="rosette" viewBox="0 0 100 100" aria-hidden="true">
+              <path
+                d="m50 0 10 21 25-6-6 25 21 10-21 10 6 25-25-6-10 21-10-21-25 6 6-25L0 50l21-10-6-25 25 6Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div class="scene-orbit orbit-two">
+            <svg class="rosette" viewBox="0 0 100 100" aria-hidden="true">
+              <path
+                d="m50 0 10 21 25-6-6 25 21 10-21 10 6 25-25-6-10 21-10-21-25 6 6-25L0 50l21-10-6-25 25 6Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <span class="floating-label label-top"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="m11 4-6 5H2v6h3l6 5V4Zm5 4c3 2 3 6 0 8m3-11c5 4 5 10 0 14"
+              />
+            </svg>
+            أكثر من 100 قارئ</span
+          ><span class="floating-label label-bottom"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" />
+              <path d="m8 12 3 3 5-6" />
+            </svg>
+            بلا إعلانات</span
+          >
+          <div class="phone">
+            <div class="phone-camera"></div>
+            <div class="phone-status"><span>٩:٤١</span><span>••• ▰</span></div>
+            <div class="phone-brand">
+              تِبيان
+              <svg viewBox="0 0 140 212" aria-hidden="true">
+                <path
+                  d="M70 68V130M70 130L22 178M70 130V190M70 130L118 178"
+                  stroke="currentColor"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <circle cx="18" cy="182" r="18" fill="currentColor" />
+                <circle cx="70" cy="194" r="18" fill="currentColor" />
+                <circle cx="122" cy="182" r="18" fill="currentColor" />
+                <circle cx="70" cy="34" r="34" fill="#C69B50" />
+              </svg>
+            </div>
+            <p class="phone-greeting">مساحةٌ تطمئنّ بها</p>
+            <h2>كل يوم،<br />أقرب.</h2>
+            <div class="phone-verse">
+              <span>وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span
+              ><small>سورة المزمل · الآية ٤</small>
+            </div>
+            <div class="phone-grid">
+              <a href="quran.html"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v15"
+                  /></svg
+                >المصحف</a
+              ><a href="adhkar.html"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="4" r="2" />
+                  <circle cx="6" cy="7" r="2" />
+                  <circle cx="4" cy="13" r="2" />
+                  <circle cx="7" cy="19" r="2" />
+                  <circle cx="14" cy="20" r="2" />
+                  <circle cx="19" cy="15" r="2" />
+                  <circle cx="19" cy="8" r="2" />
+                  <path d="m13 2 4-1m0 0 3 2" /></svg
+                >الأذكار</a
+              ><a href="prayer.html"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 21V10H2v11m20 0V10h-3v11M8 21v-7h8v7M6 11c0-4 6-4 6-8 0 4 6 4 6 8H6ZM1 21h22"
+                  /></svg
+                >الصلاة</a
+              ><a href="library.html"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 4h4v16H4zM11 4h4v16h-4zM17 5l3-1 4 15-3 1z"
+                  /></svg
+                >المكتبة</a
+              >
+            </div>
+            <div class="phone-note">معاينة توضيحية لأقسام التطبيق</div>
+            <div class="phone-home"></div>
+          </div>
+        </div>
+      </section>
+      <section class="highlights container" aria-label="لمحات عن التطبيق">
+        <div><strong>+100</strong><span>قارئ لتلاوة القرآن</span></div>
+        <div>
+          <strong>مكتبة واسعة</strong><span>كتب ومعرفة في متناولك</span>
+        </div>
+        <div><strong>عربيّ، بتفاصيله</strong><span>تجربة تقرّب المعنى</span></div>
+        <div><strong>لكل يوم</strong><span>قرآن، وذِكر، وصلاة</span></div>
+      </section>
+      <section class="discover section container" id="discover">
+        <div class="section-heading" data-reveal>
+          <div>
+            <span class="eyebrow">عالم تبيان</span>
+            <h2>أشياء كثيرة تحبّها.<br /><em>في مكانٍ واحد.</em></h2>
+          </div>
+          <p>اختر ما تريد استكشافه.<br />لكل قسم حكايته، وتفاصيله، ودليله.</p>
+        </div>
+        <div class="feature-grid">
+          <a href="quran.html" class="feature-card mint" data-reveal
+            ><div class="card-top">
+              <span class="feature-icon"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v15"
+                  /></svg></span
+              ><span class="card-index">01</span>
+            </div>
+            <span class="card-label">المصحف وغريب القرآن</span>
+            <h3>القرآن، أقرب إليك</h3>
+            <p>
+              اقرأ، واستمع، وافهم المعنى. أكثر من 100 قارئ، وتفسير ومعاني ترافق
+              كل آية.
+            </p>
+            <div class="card-bottom">
+              <span>أكثر من 100 قارئ</span
+              ><span class="round-arrow"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5m6-6-6 6 6 6" /></svg
+              ></span></div></a
+          ><a href="adhkar.html" class="feature-card lavender" data-reveal
+            ><div class="card-top">
+              <span class="feature-icon"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="4" r="2" />
+                  <circle cx="6" cy="7" r="2" />
+                  <circle cx="4" cy="13" r="2" />
+                  <circle cx="7" cy="19" r="2" />
+                  <circle cx="14" cy="20" r="2" />
+                  <circle cx="19" cy="15" r="2" />
+                  <circle cx="19" cy="8" r="2" />
+                  <path d="m13 2 4-1m0 0 3 2" /></svg></span
+              ><span class="card-index">02</span>
+            </div>
+            <span class="card-label">الأذكار والسبحة</span>
+            <h3>ذِكرٌ يرافق يومك</h3>
+            <p>
+              أذكار الصباح والمساء، وأدعية، وسبحة حديثة بإحساس بسيط وتفاعل لطيف.
+            </p>
+            <div class="card-bottom">
+              <span>سبحة بتفاعل حديث</span
+              ><span class="round-arrow"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5m6-6-6 6 6 6" /></svg
+              ></span></div></a
+          ><a href="prayer.html" class="feature-card peach" data-reveal
+            ><div class="card-top">
+              <span class="feature-icon"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 21V10H2v11m20 0V10h-3v11M8 21v-7h8v7M6 11c0-4 6-4 6-8 0 4 6 4 6 8H6ZM1 21h22"
+                  /></svg></span
+              ><span class="card-index">03</span>
+            </div>
+            <span class="card-label">المواقيت والقبلة والأذان</span>
+            <h3>للصلاة، في وقتها</h3>
+            <p>
+              مواقيت مدينتك، واتجاه القبلة، وتذكيرات بأصوات الأذان التي تحبها.
+            </p>
+            <div class="card-bottom">
+              <span>استمع إلى أصوات الأذان</span
+              ><span class="round-arrow"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5m6-6-6 6 6 6" /></svg
+              ></span></div></a
+          ><a href="library.html" class="feature-card sand" data-reveal
+            ><div class="card-top">
+              <span class="feature-icon"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 4h4v16H4zM11 4h4v16h-4zM17 5l3-1 4 15-3 1z"
+                  /></svg></span
+              ><span class="card-index">04</span>
+            </div>
+            <span class="card-label">الكتب والمكتبة</span>
+            <h3>مكتبة تفتح لك آفاقًا</h3>
+            <p>
+              مكتبة ضخمة لاكتشاف الكتب وتصفّحها وتنزيل ما تريد قراءته على مهل.
+            </p>
+            <div class="card-bottom">
+              <span>مساحة للمعرفة</span
+              ><span class="round-arrow"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5m6-6-6 6 6 6" /></svg
+              ></span></div></a
+          ><a href="seerah.html" class="feature-card blue" data-reveal
+            ><div class="card-top">
+              <span class="feature-icon"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="m12 2 2.7 6.5L22 12l-7.3 3.5L12 22l-2.7-6.5L2 12l7.3-3.5L12 2Z"
+                  /></svg></span
+              ><span class="card-index">05</span>
+            </div>
+            <span class="card-label">الحديث والسيرة</span>
+            <h3>سيرةٌ تُروى وتُرى</h3>
+            <p>
+              من الحديث وشرحه إلى خط زمني للسيرة، وخريطة وشجرة تفاعلية
+              واختبارات.
+            </p>
+            <div class="card-bottom">
+              <span>خرائط ورسوم تفاعلية</span
+              ><span class="round-arrow"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5m6-6-6 6 6 6" /></svg
+              ></span></div></a
+          ><a href="community.html" class="feature-card rose" data-reveal
+            ><div class="card-top">
+              <span class="feature-icon"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="9" cy="8" r="3" />
+                  <path
+                    d="M2 21v-3c0-5 14-5 14 0v3m0-16c5-1 7 5 2 7m1 3c4 0 4 3 4 6"
+                  /></svg></span
+              ><span class="card-index">06</span>
+            </div>
+            <span class="card-label">المجتمع وحلقات الذكر</span>
+            <h3>على الخير، نلتقي</h3>
+            <p>
+              تعرّف إلى حلقات الذكر والدعوات ورفيق الورد، ضمن ميزات المجتمع
+              التجريبية.
+            </p>
+            <div class="card-bottom">
+              <span>ميزات تجريبية</span
+              ><span class="round-arrow"
+                ><svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5m6-6-6 6 6 6" /></svg
+              ></span></div
+          ></a>
+        </div>
+      </section>
+      <section class="sound-section section">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <div>
+              <span class="eyebrow">موعدٌ يتجدّد</span>
+              <h2>للطمأنينة،<br /><em>صوتٌ تعرفه.</em></h2>
+            </div>
+            <a class="button button-tonal" href="prayer.html"
+              >المواقيت والأذان<svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5m6-6-6 6 6 6" /></svg
+            ></a>
+          </div>
+          <div data-reveal>
+            <section class="audio-panel" aria-label="معاينة أصوات الأذان">
+              <div class="audio-art">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 21V10H2v11m20 0V10h-3v11M8 21v-7h8v7M6 11c0-4 6-4 6-8 0 4 6 4 6 8H6ZM1 21h22"
+                  />
+                </svg>
+                <div class="sound-bars" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                  ><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="audio-copy">
+                <span class="eyebrow">صوتٌ تدعوه بقلبك</span>
+                <h3>للأذان، نغمته الأقرب إليك.</h3>
+                <p>اختر صوتًا واستمع إلى عيّنة من ملفات التطبيق.</p>
+                <label class="sr-only" for="adhan-voice">اختر صوت الأذان</label
+                ><select id="adhan-voice">
+                  <option value="assets/audio/adhan_makkah.mp3">
+                    أذان مكة
+                  </option>
+                  <option value="assets/audio/adhan_madinah.mp3">
+                    أذان المدينة
+                  </option>
+                  <option value="assets/audio/adhan_afasy.mp3">
+                    مشاري العفاسي
+                  </option>
+                  <option value="assets/audio/adhan_abdulbasit.mp3">
+                    عبد الباسط عبد الصمد
+                  </option></select
+                ><audio
+                  controls
+                  preload="none"
+                  id="adhan-player"
+                  aria-label="مشغّل عينة الأذان"
+                  src="assets/audio/adhan_makkah.mp3"
+                >
+                  متصفحك لا يدعم مشغّل الصوت.
+                </audio>
+                <p class="audio-status small" role="status">
+                  لن يبدأ الصوت إلا بطلبك.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="story-section section container" data-reveal>
+        <div class="story-art" aria-hidden="true">
+          <div class="arch arch-one"></div>
+          <div class="arch arch-two"></div>
+          <div class="story-star">
+            <svg class="rosette" viewBox="0 0 100 100" aria-hidden="true">
+              <path
+                d="m50 0 10 21 25-6-6 25 21 10-21 10 6 25-25-6-10 21-10-21-25 6 6-25L0 50l21-10-6-25 25 6Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div class="story-word">تدبّر<br /><span>تعلّم</span><br />واطمئنّ.</div>
+        </div>
+        <div class="story-copy">
+          <span class="eyebrow">معرفةٌ تُرى وتُفهم</span>
+          <h2>مو بس قراءة.<br /><em>رحلة اكتشاف.</em></h2>
+          <p>
+            تجوّل في خط السيرة الزمني، واستكشف خريطة الهجرة وشجرة آل البيت. ثم
+            انتقل إلى الحديث وشرحه، أو افتح كتابًا يوسّع معرفتك.
+          </p>
+          <div class="inline-links">
+            <a href="seerah.html"
+              >اكتشف الحديث والسيرة
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5m6-6-6 6 6 6" /></svg></a
+            ><a href="library.html"
+              >تصفّح فكرة المكتبة
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5m6-6-6 6 6 6" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section class="guide-banner container" data-reveal>
+        <span class="guide-symbol"
+          ><svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="m16 8-3 5-5 3 3-5 5-3Z" /></svg
+        ></span>
+        <div>
+          <span class="eyebrow">أول مرة مع تبيان؟</span>
+          <h2>خذها خطوة، خطوة.</h2>
+          <p>القراءة والتلاوة، إعداد الأذان، تنزيل المحتوى، والدعوات.</p>
+        </div>
+        <a class="button button-primary" href="guide.html"
+          >افتح دليل الاستخدام<svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M19 12H5m6-6-6 6 6 6" /></svg
+        ></a>
+      </section>
+      <section class="section container faq-section">
+        <div class="section-heading" data-reveal>
+          <div>
+            <span class="eyebrow">قبل أن تبدأ</span>
+            <h2>يمكن هذا سؤالك.</h2>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>
+              هل تبيان متاح على أندرويد؟<span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                نعم، يمكنك تنزيل تبيان من Google Play عبر زر التحميل. الموقع
+                يشرح أقسام التطبيق ويعرض معاينات توضيحية، وتجربة التطبيق الكاملة
+                على أندرويد.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              هل يحتاج التطبيق إلى الإنترنت؟<span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                يلزم الإنترنت لتنزيل محتوى مثل التلاوات والتفاسير والكتب.
+                المحتوى المحفوظ متاح بحسب القسم، وتُحسب مواقيت الصلاة على جهازك.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              كيف أضبط صوت الأذان؟<span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                حدّد مدينتك، ثم اختر صوت الأذان وأكمل أذونات التنبيهات. تجد شرحًا
+                أوضح في صفحة المواقيت والأذان ودليل الاستخدام.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              أين أجد سياسة الخصوصية وحذف البيانات؟<span aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <div class="faq-answer">
+              <p>
+                سياسة الخصوصية متاحة من أسفل كل صفحة، وبها قسم لحذف البيانات.
+                بقيت على رابطها الأصلي حتى تعمل الروابط الموجودة في التطبيق
+                والمتجر.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="download-section container" id="contact" data-reveal>
+        <div class="download-pattern" aria-hidden="true"></div>
+        <div class="download-content">
+          <span class="eyebrow">رفيقك في كل يوم</span>
+          <h2>كل رحلة قرب،<br />تبدأ بخطوة.</h2>
+          <p>خذ تبيان معك، وابدأ من الآية التي تحب.</p>
+          <a
+            class="button button-cream"
+            href="https://play.google.com/store/apps/details?id=com.app.tibyan"
+            >احصل عليه من Google Play<svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M19 12H5m6-6-6 6 6 6" /></svg
+          ></a>
+        </div>
+        <div class="download-contact">
+          <span>عندك سؤال أو اقتراح؟</span
+          ><a href="mailto:mr.ahmed.alhariri@gmail.com"
+            >راسلنا بالبريد
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M19 12H5m6-6-6 6 6 6" /></svg></a
+          ><a href="https://t.me/Ahmad_Alhariri"
+            >تواصل عبر تيليجرام
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M19 12H5m6-6-6 6 6 6" /></svg></a
+          ><small>اذكر إصدار التطبيق ونوع جهازك عند الإبلاغ عن مشكلة.</small>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a class="brand" href="./" aria-label="تبيان — الصفحة الرئيسية"
+            ><span class="brand-mark"
+              ><svg viewBox="0 0 140 212" aria-hidden="true">
+                <path
+                  d="M70 68V130M70 130L22 178M70 130V190M70 130L118 178"
+                  stroke="currentColor"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <circle cx="18" cy="182" r="18" fill="currentColor" />
+                <circle cx="70" cy="194" r="18" fill="currentColor" />
+                <circle cx="122" cy="182" r="18" fill="currentColor" />
+                <circle cx="70" cy="34" r="34" fill="#C69B50" /></svg></span
+            ><span>تِبيان<small>TIBYAN</small></span></a
+          >
+          <p>تفهم أكثر، وتتقرّب أكثر.<br />رفيقٌ للقرآن، وما يطمئنّ به يومك.</p>
+          <div class="footer-links">
+            <a href="privacy.html">سياسة الخصوصية</a
+            ><a href="privacy.html#delete">حذف البيانات</a
+            ><a href="guide.html">دليل الاستخدام</a
+            ><a href="mailto:mr.ahmed.alhariri@gmail.com">الدعم والتواصل</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 تبيان · أحمد الحريري</span
+          ><span lang="en">MADE WITH CARE. FOR YOUR EVERYDAY.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

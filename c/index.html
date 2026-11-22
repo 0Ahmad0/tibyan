@@ -1,43 +1,152 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>انضم إلى حلقة ذكر في تِبيان</title>
-<style>
-  :root { color-scheme: light dark; --g:#0a6b5a; }
-  body { margin:0; font-family: system-ui, "Segoe UI", Tahoma, sans-serif; display:grid; place-items:center; min-height:100vh; padding:24px; box-sizing:border-box; text-align:center; }
-  main { max-width:420px; width:100%; }
-  h1 { font-size:1.4rem; margin:0 0 .5rem; }
-  p { line-height:1.8; opacity:.85; }
-  .code { font-size:2.2rem; letter-spacing:.4em; font-weight:700; color:var(--g); direction:ltr; margin:1rem 0; }
-  a.btn { display:block; padding:16px; border-radius:14px; text-decoration:none; font-size:1.1rem; margin:12px 0; }
-  a.open { background:var(--g); color:#fff; }
-  a.store { border:2px solid var(--g); color:var(--g); }
-</style>
-</head>
-<body>
-<main>
-  <h1>حلقة ذكر في تِبيان</h1>
-  <p>رمز الحلقة:</p>
-  <div class="code" id="code">······</div>
-  <a class="btn open" id="open" href="#">افتح في التطبيق</a>
-  <a class="btn store" href="https://play.google.com/store/apps/details?id=com.app.tibyan">ثبّت التطبيق من Google Play</a>
-  <p>إن كان التطبيق مثبّتًا فاضغط «افتح في التطبيق»، وإلا ثبّته ثم عُد إلى هذا الرابط.</p>
-</main>
-<script>
-  // الرمز من الرابط: 6 خانات حروفٌ كبيرة وأرقام فقط — غير ذلك لا يُعرض ولا يُمرَّر.
-  const raw = new URLSearchParams(location.search).get("code") || "";
-  const code = /^[A-Za-z0-9]{6}$/.test(raw) ? raw.toUpperCase() : "";
-  if (code) {
-    document.getElementById("code").textContent = code;
-    const app = "tibyan://c?code=" + code;
-    document.getElementById("open").href = app;
-    // محاولةٌ تلقائية بعد لحظة: ينجح حيث لا يتحقّق رابط التطبيق من النطاق.
-    setTimeout(() => { location.href = app; }, 400);
-  } else {
-    document.getElementById("open").style.display = "none";
-  }
-</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#075344" />
+    <title>انضم إلى حلقة ذكر — تِبيان</title>
+    <meta
+      name="description"
+      content="افتح دعوة حلقة الذكر في تطبيق تبيان، أو انسخ رمز الحلقة للانضمام."
+    />
+    <link rel="icon" href="../assets/brand.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <script src="../assets/site.js" defer></script>
+  </head>
+  <body class="invite-page">
+    <a class="invite-brand brand" href="../"
+      ><span class="brand-mark"
+        ><svg viewBox="0 0 140 212" aria-hidden="true">
+          <path
+            d="M70 68V130M70 130L22 178M70 130V190M70 130L118 178"
+            stroke="currentColor"
+            stroke-width="18"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+          />
+          <circle cx="18" cy="182" r="18" fill="currentColor" />
+          <circle cx="70" cy="194" r="18" fill="currentColor" />
+          <circle cx="122" cy="182" r="18" fill="currentColor" />
+          <circle cx="70" cy="34" r="34" fill="#C69B50" /></svg></span
+      ><span>تِبيان<small>TIBYAN</small></span></a
+    >
+    <main id="main" class="invite-shell">
+      <div class="invite-art" aria-hidden="true">
+        <svg
+          class="icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="9" cy="8" r="3" />
+          <path
+            d="M2 21v-3c0-5 14-5 14 0v3m0-16c5-1 7 5 2 7m1 3c4 0 4 3 4 6"
+          /></svg
+        ><svg class="rosette" viewBox="0 0 100 100" aria-hidden="true">
+          <path
+            d="m50 0 10 21 25-6-6 25 21 10-21 10 6 25-25-6-10 21-10-21-25 6 6-25L0 50l21-10-6-25 25 6Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <span class="eyebrow">على الخير، نلتقي</span>
+      <h1>مكانك معنا<br /><em>في حلقة الذكر.</em></h1>
+      <p id="invite-description">
+        افتح الدعوة في تبيان، أو انسخ الرمز للانضمام من داخل التطبيق.
+      </p>
+      <div id="valid-invite" hidden>
+        <div class="invite-code-box">
+          <span>رمز الحلقة</span><strong id="invite-code" dir="ltr"></strong
+          ><button
+            class="icon-button"
+            type="button"
+            id="copy-code"
+            aria-label="نسخ رمز الحلقة"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="8" y="8" width="13" height="13" rx="3" />
+              <path d="M16 8V3H3v13h5" />
+            </svg>
+          </button>
+        </div>
+        <a class="button button-primary" id="open-app" href="#"
+          >افتح في التطبيق
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M19 12H5m6-6-6 6 6 6" /></svg></a
+        ><a
+          class="button button-tonal"
+          href="https://play.google.com/store/apps/details?id=com.app.tibyan"
+          >ثبّت تبيان من Google Play
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" /></svg
+        ></a>
+        <p class="small muted">
+          إذا لم تفتح الدعوة، جرّب فتح الرابط بالمتصفح الخارجي، أو أدخل الرمز
+          داخل قسم المجتمع. بعد التثبيت، عُد إلى هذه الدعوة.
+        </p>
+      </div>
+      <div id="invalid-invite" hidden>
+        <div class="invalid-note">
+          الرابط غير مكتمل أو رمز الحلقة غير صالح. اطلب رابط الدعوة كاملًا من
+          صاحب الحلقة.
+        </div>
+        <a class="button button-primary" href="../community.html"
+          >عن حلقات الذكر
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M19 12H5m6-6-6 6 6 6" /></svg
+        ></a>
+      </div>
+      <p id="invite-status" class="small" role="status"></p>
+      <noscript
+        ><p>
+          فعّل JavaScript لعرض رمز الدعوة، أو انسخ الرمز الموجود بعد
+          <bdi>code=</bdi> في الرابط وأدخله داخل التطبيق.
+        </p></noscript
+      ><a class="text-link" href="../privacy.html">سياسة الخصوصية</a>
+    </main>
+    <footer class="invite-footer">
+      تجربة المجتمع تتطلب نسخة تدعم الميزة وتفعيل الخدمة.
+    </footer>
+  </body>
 </html>
